@@ -1,21 +1,16 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { render } from 'react-dom';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import HomeBar from './main/js/home/HomeBar.js';
+import BasePage from './main/js/home/BasePage.js';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+const theme = createMuiTheme();
+
+export default function App() {
+  return (
+    <MuiThemeProvider theme={theme}>
+      <HomeBar />
+      <BasePage />
+    </MuiThemeProvider>
+  );
 }
-
-export default App;
